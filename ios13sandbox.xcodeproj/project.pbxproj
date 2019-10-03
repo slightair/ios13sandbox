@@ -16,6 +16,7 @@
 		570266432345D3B600FCAC96 /* APIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 570266422345D3B600FCAC96 /* APIKit */; };
 		570266472345D4B100FCAC96 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570266462345D4B100FCAC96 /* GitHubAPI.swift */; };
 		570266492345DAA200FCAC96 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570266482345DAA200FCAC96 /* RepositoryListViewController.swift */; };
+		5702664D2345E72900FCAC96 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702664C2345E72900FCAC96 /* RepositoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		5702663B233A6CC600FCAC96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570266462345D4B100FCAC96 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		570266482345DAA200FCAC96 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
+		5702664C2345E72900FCAC96 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				5702663B233A6CC600FCAC96 /* Info.plist */,
 				57026635233A6CC600FCAC96 /* Preview Content */,
 				570266482345DAA200FCAC96 /* RepositoryListViewController.swift */,
+				5702664C2345E72900FCAC96 /* RepositoryCell.swift */,
 			);
 			path = ios13sandbox;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				5702662E233A6CC400FCAC96 /* AppDelegate.swift in Sources */,
 				57026630233A6CC400FCAC96 /* SceneDelegate.swift in Sources */,
 				570266472345D4B100FCAC96 /* GitHubAPI.swift in Sources */,
+				5702664D2345E72900FCAC96 /* RepositoryCell.swift in Sources */,
 				57026632233A6CC400FCAC96 /* ContentView.swift in Sources */,
 				570266492345DAA200FCAC96 /* RepositoryListViewController.swift in Sources */,
 			);

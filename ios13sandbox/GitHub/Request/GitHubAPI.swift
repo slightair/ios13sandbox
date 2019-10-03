@@ -30,7 +30,7 @@ extension GitHubRequest where Response: Decodable {
     }
 }
 
-struct Repository: Decodable {
+struct Repository: Decodable, Hashable {
     let id: Int64
     let name: String
 
