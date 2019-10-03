@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		57026634233A6CC600FCAC96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57026633233A6CC600FCAC96 /* Assets.xcassets */; };
 		57026637233A6CC600FCAC96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57026636233A6CC600FCAC96 /* Preview Assets.xcassets */; };
 		5702663A233A6CC600FCAC96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57026638233A6CC600FCAC96 /* LaunchScreen.storyboard */; };
+		570266432345D3B600FCAC96 /* APIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 570266422345D3B600FCAC96 /* APIKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570266432345D3B600FCAC96 /* APIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = ios13sandbox;
+			packageProductDependencies = (
+				570266422345D3B600FCAC96 /* APIKit */,
+			);
 			productName = ios13sandbox;
 			productReference = 5702662A233A6CC400FCAC96 /* ios13sandbox.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 57026621233A6CC400FCAC96;
+			packageReferences = (
+				570266412345D3B600FCAC96 /* XCRemoteSwiftPackageReference "APIKit" */,
+			);
 			productRefGroup = 5702662B233A6CC400FCAC96 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,6 +348,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		570266412345D3B600FCAC96 /* XCRemoteSwiftPackageReference "APIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ishkawa/APIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		570266422345D3B600FCAC96 /* APIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 570266412345D3B600FCAC96 /* XCRemoteSwiftPackageReference "APIKit" */;
+			productName = APIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57026622233A6CC400FCAC96 /* Project object */;
 }
