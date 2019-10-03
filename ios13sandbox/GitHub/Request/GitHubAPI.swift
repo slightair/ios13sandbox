@@ -1,5 +1,5 @@
-import Foundation
 import APIKit
+import Foundation
 
 protocol GitHubRequest: Request {}
 
@@ -22,7 +22,7 @@ extension GitHubRequest where Response: Decodable {
         return DecodableDataParser()
     }
 
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
+    func response(from object: Any, urlResponse _: HTTPURLResponse) throws -> Response {
         guard let data = object as? Data else {
             throw ResponseError.unexpectedObject(object)
         }

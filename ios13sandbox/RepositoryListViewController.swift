@@ -1,5 +1,5 @@
-import UIKit
 import APIKit
+import UIKit
 
 class RepositoryListViewController: UIViewController {
     enum Section: CaseIterable {
@@ -24,14 +24,14 @@ class RepositoryListViewController: UIViewController {
         let request = GitHubAPI.SearchRepositoriesRequest(query: query)
         Session.send(request) { result in
             switch result {
-            case .success(let response):
+            case let .success(response):
                 var snapshot = NSDiffableDataSourceSnapshot<Section, Repository>()
 
                 snapshot.appendSections([.main])
                 snapshot.appendItems(response.items)
 
                 self.dataSource.apply(snapshot)
-            case .failure(let error):
+            case let .failure(error):
                 print(error)
             }
         }
@@ -84,6 +84,4 @@ extension RepositoryListViewController {
     }
 }
 
-extension RepositoryListViewController: UICollectionViewDelegate {
-
-}
+extension RepositoryListViewController: UICollectionViewDelegate {}
