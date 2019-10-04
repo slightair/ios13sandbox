@@ -17,6 +17,8 @@
 		570266472345D4B100FCAC96 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570266462345D4B100FCAC96 /* GitHubAPI.swift */; };
 		570266492345DAA200FCAC96 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570266482345DAA200FCAC96 /* RepositoryListViewController.swift */; };
 		5702664D2345E72900FCAC96 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702664C2345E72900FCAC96 /* RepositoryCell.swift */; };
+		574AF2F02349ECFD0008B05C /* UICollectionView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574AF2EF2349ECFD0008B05C /* UICollectionView+Combine.swift */; };
+		579AAA812346CC25008BDE6A /* Session+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AAA802346CC25008BDE6A /* Session+Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		570266462345D4B100FCAC96 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		570266482345DAA200FCAC96 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
 		5702664C2345E72900FCAC96 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		574AF2EF2349ECFD0008B05C /* UICollectionView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Combine.swift"; sourceTree = "<group>"; };
+		579AAA802346CC25008BDE6A /* Session+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		5702662C233A6CC400FCAC96 /* ios13sandbox */ = {
 			isa = PBXGroup;
 			children = (
+				579AAA7F2346CBD4008BDE6A /* Extension */,
 				570266442345D41800FCAC96 /* GitHub */,
 				5702662D233A6CC400FCAC96 /* AppDelegate.swift */,
 				5702662F233A6CC400FCAC96 /* SceneDelegate.swift */,
@@ -100,6 +105,15 @@
 				570266462345D4B100FCAC96 /* GitHubAPI.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		579AAA7F2346CBD4008BDE6A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				579AAA802346CC25008BDE6A /* Session+Combine.swift */,
+				574AF2EF2349ECFD0008B05C /* UICollectionView+Combine.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +195,11 @@
 			files = (
 				5702662E233A6CC400FCAC96 /* AppDelegate.swift in Sources */,
 				57026630233A6CC400FCAC96 /* SceneDelegate.swift in Sources */,
+				579AAA812346CC25008BDE6A /* Session+Combine.swift in Sources */,
 				570266472345D4B100FCAC96 /* GitHubAPI.swift in Sources */,
 				5702664D2345E72900FCAC96 /* RepositoryCell.swift in Sources */,
 				57026632233A6CC400FCAC96 /* ContentView.swift in Sources */,
+				574AF2F02349ECFD0008B05C /* UICollectionView+Combine.swift in Sources */,
 				570266492345DAA200FCAC96 /* RepositoryListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

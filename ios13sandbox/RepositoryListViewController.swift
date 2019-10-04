@@ -1,13 +1,18 @@
 import APIKit
 import UIKit
+import Combine
 
 class RepositoryListViewController: UIViewController {
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, Repository>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Repository>
+
     enum Section: CaseIterable {
         case main
     }
 
-    var dataSource: UICollectionViewDiffableDataSource<Section, Repository>!
+    var dataSource: DataSource!
     var collectionView: UICollectionView!
+    var requestCancellable: Cancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,25 +21,30 @@ class RepositoryListViewController: UIViewController {
 
         configureSubviews()
         configureDataSource()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         performQuery(query: "swift")
     }
 
     private func performQuery(query: String) {
         let request = GitHubAPI.SearchRepositoriesRequest(query: query)
-        Session.send(request) { result in
-            switch result {
-            case let .success(response):
-                var snapshot = NSDiffableDataSourceSnapshot<Section, Repository>()
-
-                snapshot.appendSections([.main])
-                snapshot.appendItems(response.items)
-
-                self.dataSource.apply(snapshot)
-            case let .failure(error):
-                print(error)
-            }
-        }
+        requestCancellable =
+            Just(request)
+                .flatMap { request in
+                    Session
+                        .publisher(for: request)
+                        .map { response in
+                            var snapshot = Snapshot()
+                            snapshot.appendSections([.main])
+                            snapshot.appendItems(response.items)
+                            return snapshot
+                        }
+                        .catch { _ in Just(Snapshot()) }
+                }
+                .apply(to: dataSource)
     }
 }
 
@@ -72,7 +82,7 @@ extension RepositoryListViewController {
     }
 
     private func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Repository>(collectionView: collectionView) { collectionView, indexPath, repository in
+        dataSource = DataSource(collectionView: collectionView) { collectionView, indexPath, repository in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepositoryCell.reuseIdentifier, for: indexPath) as? RepositoryCell else {
                 fatalError()
             }
